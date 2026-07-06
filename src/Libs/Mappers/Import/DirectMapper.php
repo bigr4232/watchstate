@@ -1175,12 +1175,8 @@ class DirectMapper implements ImportInterface
     {
         $this->removePointers($entity);
 
-        if (null !== ($this->objects[$entity->id] ?? null)) {
-            unset($this->objects[$entity->id]);
-        }
-
-        if (null !== ($this->changed[$entity->id] ?? null)) {
-            unset($this->changed[$entity->id]);
+        if (null !== $entity->id) {
+            unset($this->objects[$entity->id], $this->changed[$entity->id]);
         }
 
         return $this->db->remove($entity);

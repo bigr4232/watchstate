@@ -260,7 +260,7 @@ final class Guids
             $mapTo = 'guid_' . $mapTo;
         }
 
-        if (false === array_key_exists($mapTo, Guid::getSupported())) {
+        if (false === array_key_exists((string) $mapTo, Guid::getSupported())) {
             return api_error(r("The map.to GUID '{guid}' is not supported.", [
                 'guid' => $params->get('map.to'),
             ]), Status::BAD_REQUEST);
