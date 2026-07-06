@@ -386,7 +386,7 @@ class BackupCommand extends Command
             }
 
             if (count($list) <= 1 && null !== ($file = $input->getOption('file'))) {
-                $fileName = str_starts_with($file, '/') ? $file : Config::get('path') . '/backup' . '/' . $file;
+                $fileName = str_starts_with($file, '/') ? $file : Config::get('path') . '/backup/' . $file;
             }
 
             if (false === $input->getOption('dry-run')) {

@@ -211,7 +211,7 @@ class Progress
 
             $logContext['remote']['id'] = ag($metadata, iState::COLUMN_ID);
 
-            if (array_key_exists($logContext['remote']['id'], $sessions)) {
+            if (array_key_exists((string) $logContext['remote']['id'], $sessions)) {
                 $this->logger->notice(
                     message: "Not processing '#{history.id}: {history.title}' for '{identity.user}@{identity.backend}'. The item is playing right now.",
                     context: [
